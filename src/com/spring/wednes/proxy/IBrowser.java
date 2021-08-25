@@ -1,5 +1,5 @@
 package com.spring.wednes.proxy;
 
-public interface IBrowseer {
+public interface IBrowser {
     Html show();
 }
