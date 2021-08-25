@@ -1,6 +1,6 @@
 package com.spring.wednes.proxy;
 
-public class Browser implements IBrowseer{
+public class Browser implements IBrowser {
     private String url;
 
     public Browser(String url) {
