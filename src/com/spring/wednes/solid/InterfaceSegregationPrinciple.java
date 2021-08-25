@@ -3,56 +3,30 @@ package com.spring.wednes.solid;
 public class InterfaceSegregationPrinciple {
 }
 
-// 안좋은 예시
-class Map {
-    public void walk() {
-    }
-
-    public void car() {
-    }
-
-    public void bike() {
-    }
-
-    public void sky() {
-    }
-
-    public void ocean() {
-    }
-
-    public void subway() {
-    }
-
+interface ICarMap {
+    public void car();
 }
 
-class CarMap extends Map {
-    @Override
-    public void walk() {
+interface IBikeMap {
+    public void bike();
+}
 
-    }
+
+class CarMap implements ICarMap { // 자동차 내비는 자동차 길안내만 있으면 된다.
 
     @Override
     public void car() {
-        super.car();
+        // 자동차~
+    }
+}
+
+class Map implements ICarMap, IBikeMap { // 지도는 모든 종류의 안내가 가능해야한다.
+
+    @Override
+    public void car() { // 자동차 길 안내!
     }
 
     @Override
-    public void bike() {
-
-    }
-
-    @Override
-    public void sky() {
-
-    }
-
-    @Override
-    public void ocean() {
-
-    }
-
-    @Override
-    public void subway() {
-
+    public void bike() {  // 바이크 길 안내!
     }
 }
